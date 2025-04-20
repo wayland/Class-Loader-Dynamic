@@ -1,0 +1,42 @@
+#!/usr/bin/raku
+
+use	v6.d;
+
+use	lib	'lib';
+use	lib	't';
+
+use	Test;
+use	Class::Loader::Dynamic;
+
+class Foo does Class::Loader::Dynamic {}
+
+my $loader = Foo.new();
+my ($passes, $fails) = $loader.load-module-pattern(
+	:paths(['lib', 't']),
+	:globs(["Lo?derTest*"]),
+);
+
+ok(
+	
+		    $passes.elems == 1
+		&& $passes.keys[0] eq 'LoaderTestPassing'
+	,
+	"Passing class loaded OK"
+);
+ok(
+	(
+			$fails.elems == 1
+		and	$fails.keys[0] eq 'LoaderTestFailing'
+	), 
+	"Failing class failed OK"
+);
+ok(
+	! ($passes<IgnoredLoaderTest>:exists or $fails<IgnoredLoaderTest>),
+	"Ignored class is ignored OK"
+);
+
+lives-ok({
+	$passes<LoaderTestPassing>.the-method();
+}, "Method on Passing class can be called");
+
+
