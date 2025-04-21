@@ -92,6 +92,7 @@ role	Class::Loader::Dynamic {
 				%passes{$module-name} = $object;
 			}
 		}
+
 		return %passes, %fails;
 	}
 } # End Loader

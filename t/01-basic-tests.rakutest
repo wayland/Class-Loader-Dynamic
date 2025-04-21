@@ -2,7 +2,7 @@
 
 use	v6.d;
 
-use	lib	't';
+use	lib 't/lib';
 
 use	Test;
 use	Class::Loader::Dynamic;
@@ -11,9 +11,11 @@ class Foo does Class::Loader::Dynamic {}
 
 my $loader = Foo.new();
 my ($passes, $fails) = $loader.load-module-pattern(
-	:paths(['lib', 't']),
+	:paths([$*PROGRAM.parent.child('lib'), $*PROGRAM.parent]),
 	:globs(["Lo?derTest*"]),
 );
+
+
 
 ok(
 	
