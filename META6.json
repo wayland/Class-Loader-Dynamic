@@ -18,5 +18,5 @@
   "source-url": "https://github.com/wayland/Class-Loader-Dynamic.git",
   "test-depends": [
   ],
-  "version": "0.0.5"
+  "version": "0.0.6"
 }

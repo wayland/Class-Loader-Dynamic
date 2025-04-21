@@ -15,7 +15,7 @@ my ($passes, $fails) = $loader.load-module-pattern(
 	:globs(["Lo?derTest*"]),
 );
 
-
+plan 4;
 
 ok(
 	
