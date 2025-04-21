@@ -4,7 +4,7 @@
   "build-depends": [
   ],
   "depends": [
-    "Grammar::Glob"
+    "Glob::Grammar"
   ],
   "description": "Will dynamically create classes with the same name as the modules.  Modules can be specified with the glob language",
   "license": "Artistic-2.0",
