@@ -1,23 +1,22 @@
 {
-	"name": "Class::Loader::Dynamic",
-	"description": "Will dynamically create classes with the same name as the modules.  Modules can be specified with the glob language",
-	"version": "0.0.1",
-	"license": "Artistic-2.0",
-	"source-url": "https://github.com/wayland/Class-Loader-Dynamic.git",
-
-	"auth": "zef:wayland",
-	"authors": "Tim Nelson",
-
-	"build-depends": [
-	],
-	"depends": [
-	],
-	"perl": "v6.d",
-	"provides": {
-		"Class::Loader::Dynamic": "lib/Class/Loader/Dynamic.rakumod"
-	},
-	"resources": [
-	],
-	"test-depends": [
-	]
+  "auth": "zef:wayland",
+  "authors": "Tim Nelson",
+  "build-depends": [
+  ],
+  "depends": [
+    "Grammar::Glob"
+  ],
+  "description": "Will dynamically create classes with the same name as the modules.  Modules can be specified with the glob language",
+  "license": "Artistic-2.0",
+  "name": "Class::Loader::Dynamic",
+  "perl": "v6.d",
+  "provides": {
+    "Class::Loader::Dynamic": "lib/Class/Loader/Dynamic.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/wayland/Class-Loader-Dynamic.git",
+  "test-depends": [
+  ],
+  "version": "0.0.2"
 }
